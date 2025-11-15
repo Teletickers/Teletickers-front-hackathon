@@ -1,6 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import LoginPage from "../components/auth/LoginPage";
+import Footer from "../components/ui/Footer";
 ---
 
 <Layout title="Login - Ticky">
@@ -10,3 +11,4 @@ import LoginPage from "../components/auth/LoginPage";
     <LoginPage client:only="react" />
   </div>
 </Layout>
+<Footer />

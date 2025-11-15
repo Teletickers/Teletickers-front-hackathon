@@ -1,13 +1,21 @@
 ---
 // src/pages/eventos/[id].astro
 import Layout from "../../layouts/Layout.astro";
+import Sidebar from "../../components/ui/Sidebar";
+import Header from "../../components/ui/Header";
+import Footer from "../../components/ui/Footer";
 import type { Evento } from "../../types";
 
 export const prerender = false;
 ---
 
 <Layout title="Detalle del Evento - Ticky">
-  <div id="evento-detail" class="container mx-auto px-4 py-8"></div>
+  <Sidebar client:load />
+  <div class="ml-14">
+    <Header client:load />
+    <div id="evento-detail" class="container mx-auto px-4 py-8"></div>
+    <Footer client:load />
+  </div>
 </Layout>
 
 <script>
@@ -29,12 +37,13 @@ export const prerender = false;
         variables: { id: eventoId },
       });
 
-      const evento = data.evento;
-      if (!evento) {
+      if (!data || !data.evento) {
         document.getElementById("evento-detail")!.innerHTML =
           "<p>Evento no encontrado</p>";
         return;
       }
+
+      const evento = data.evento;
 
       document.getElementById("evento-detail")!.innerHTML = `
         <div class="max-w-4xl mx-auto">

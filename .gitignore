@@ -1,6 +1,9 @@
 # build output
 dist/
 
+# Mi directorio que crea kde xd
+.directory
+
 # generated types
 .astro/
 
