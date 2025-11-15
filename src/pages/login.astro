@@ -1,0 +1,12 @@
+---
+import Layout from "../layouts/Layout.astro";
+import LoginForm from "../components/auth/LoginForm";
+import { ApolloProvider } from "../lib/apollo-client";
+import { apolloClient } from "../lib/apollo-client";
+---
+
+<Layout title="Login - Ticky">
+  <ApolloProvider client={apolloClient} client:load>
+    <LoginForm client:load />
+  </ApolloProvider>
+</Layout>
