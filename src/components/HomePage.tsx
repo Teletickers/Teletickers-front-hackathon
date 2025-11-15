@@ -1,4 +1,3 @@
-// src/components/HomePage.tsx
 import ApolloWrapper from './providers/ApolloWrapper';
 import EventList from './events/EventList';
 

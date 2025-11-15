@@ -1,4 +1,3 @@
-// src/components/events/EventList.tsx
 import { useQuery } from '@apollo/client/react';
 import { GET_EVENTOS_PUBLICADOS } from '../../lib/graphql/queries';
 import EventCard from './EventCard';

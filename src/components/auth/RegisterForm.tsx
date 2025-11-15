@@ -14,7 +14,7 @@ export default function RegisterForm() {
     email: '',
     password: '',
     dni: '',
-    numero_cel: '',
+    numeroCel: '',
   });
   const [error, setError] = useState('');
   const [register, { loading }] = useMutation<RegisterData>(REGISTER_MUTATION);
@@ -75,8 +75,8 @@ export default function RegisterForm() {
         <label className="block text-sm font-medium mb-2">Teléfono (opcional)</label>
         <input
           type="tel"
-          value={formData.numero_cel}
-          onChange={(e) => setFormData({ ...formData, numero_cel: e.target.value })}
+          value={formData.numeroCel}
+          onChange={(e) => setFormData({ ...formData, numeroCel: e.target.value })}
           className="w-full px-4 py-2 border rounded-lg"
         />
       </div>
