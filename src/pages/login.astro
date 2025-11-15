@@ -1,12 +1,12 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import LoginForm from "../components/auth/LoginForm";
-import { ApolloProvider } from "../lib/apollo-client";
-import { apolloClient } from "../lib/apollo-client";
+import LoginPage from "../components/auth/LoginPage";
 ---
 
 <Layout title="Login - Ticky">
-  <ApolloProvider client={apolloClient} client:load>
-    <LoginForm client:load />
-  </ApolloProvider>
+  <div
+    class="min-h-screen flex items-center justify-center bg-gray-50 py-12 px-4"
+  >
+    <LoginPage client:only="react" />
+  </div>
 </Layout>
