@@ -53,3 +53,44 @@ export const SEARCH_EVENTOS = gql`
     }
   }
 `;
+
+export const GET_MIS_EVENTOS = gql`
+  query MisEventos {
+    misEventos {
+      id
+      titulo
+      descripcion
+      fecha
+      hora
+      region
+      provincia
+      distrito
+      categoria
+      aforo
+      estado
+    }
+  }
+`;
+
+export const GET_MIS_COMPRAS = gql`
+  query MisCompras {
+    misCompras {
+      id
+      eventoId
+      montoTotal
+      metodoPago
+      estadoPago
+    }
+  }
+`;
+
+export const GET_DASHBOARD_METRICS = gql`
+  query DashboardMetrics {
+    dashboardMetrics {
+      totalEventos
+      totalVentas
+      ingresosTotales
+      eventosActivos
+    }
+  }
+`;
