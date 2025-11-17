@@ -64,7 +64,7 @@ export default function TermsStep({ data, updateData, onSubmit, onBack, loading 
         <button
           type="submit"
           disabled={!data.acepta_terminos || loading}
-          className="flex-1 bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 disabled:bg-gray-400"
+          className="flex-1 bg-green-600 text-white py-3 rounded-lg hover:bg-green-700 disabled:bg-gray-400"
         >
           {loading ? 'Creando evento...' : 'Crear Evento'}
         </button>

@@ -112,7 +112,7 @@ export default function AdvancedSearchBar() {
               }}
               onFocus={() => setShowSuggestions(true)}
               placeholder="Buscar eventos..."
-              className="w-full pl-12 pr-4 py-3 border-2 border-gray-200 dark:border-gray-600 rounded-lg focus:border-blue-500 dark:focus:border-blue-400 focus:outline-none bg-white dark:bg-gray-700 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 transition-colors"
+              className="w-full pl-12 pr-4 py-3 border-2 border-gray-200 dark:border-gray-600 rounded-lg focus:border-green-500 dark:focus:border-green-400 focus:outline-none bg-white dark:bg-gray-700 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 transition-colors"
             />
           </div>
 
@@ -127,11 +127,12 @@ export default function AdvancedSearchBar() {
                     setSearchText(suggestion);
                     setShowSuggestions(false);
                   }}
-                  className="w-full px-4 py-3 text-left hover:bg-gray-50 dark:hover:bg-gray-700 first:rounded-t-lg last:rounded-b-lg transition-colors text-gray-900 dark:text-white"
+                  className="w-full px-4 py-3 text-left hover:bg-green-50 dark:hover:bg-green-900/30 first:rounded-t-lg last:rounded-b-lg transition-colors text-gray-900 dark:text-white hover:text-green-700 dark:hover:text-green-400 font-medium"
                 >
                   {suggestion}
                 </button>
               ))}
+
             </div>
           )}
         </div>
@@ -141,7 +142,7 @@ export default function AdvancedSearchBar() {
           <select
             value={ciudad}
             onChange={(e) => setCiudad(e.target.value)}
-            className="appearance-none pl-4 pr-10 py-3 border-2 border-gray-200 dark:border-gray-600 rounded-lg focus:border-blue-500 dark:focus:border-blue-400 focus:outline-none cursor-pointer bg-white dark:bg-gray-700 text-gray-900 dark:text-white min-w-[150px] transition-colors"
+            className="appearance-none pl-4 pr-10 py-3 border-2 border-gray-200 dark:border-gray-600 rounded-lg focus:border-green-500 dark:focus:border-green-400 focus:outline-none cursor-pointer bg-white dark:bg-gray-700 text-gray-900 dark:text-white min-w-[150px] transition-colors"
           >
             {CIUDADES.map((c) => (
               <option key={c} value={c}>
@@ -164,7 +165,7 @@ export default function AdvancedSearchBar() {
           <select
             value={precio}
             onChange={(e) => setPrecio(e.target.value)}
-            className="appearance-none pl-4 pr-10 py-3 border-2 border-gray-200 dark:border-gray-600 rounded-lg focus:border-blue-500 dark:focus:border-blue-400 focus:outline-none cursor-pointer bg-white dark:bg-gray-700 text-gray-900 dark:text-white min-w-[150px] transition-colors"
+            className="appearance-none pl-4 pr-10 py-3 border-2 border-gray-200 dark:border-gray-600 rounded-lg focus:border-green-500 dark:focus:border-green-400 focus:outline-none cursor-pointer bg-white dark:bg-gray-700 text-gray-900 dark:text-white min-w-[150px] transition-colors"
           >
             {PRECIOS.map((p) => (
               <option key={p.value} value={p.value}>
@@ -187,7 +188,7 @@ export default function AdvancedSearchBar() {
           <select
             value={categoria}
             onChange={(e) => setCategoria(e.target.value)}
-            className="appearance-none pl-4 pr-10 py-3 border-2 border-gray-200 dark:border-gray-600 rounded-lg focus:border-blue-500 dark:focus:border-blue-400 focus:outline-none cursor-pointer bg-white dark:bg-gray-700 text-gray-900 dark:text-white min-w-[150px] transition-colors"
+            className="appearance-none pl-4 pr-10 py-3 border-2 border-gray-200 dark:border-gray-600 rounded-lg focus:border-green-500 dark:focus:border-green-400 focus:outline-none cursor-pointer bg-white dark:bg-gray-700 text-gray-900 dark:text-white min-w-[150px] transition-colors"
           >
             {CATEGORIAS.map((cat) => (
               <option key={cat} value={cat}>
@@ -208,7 +209,7 @@ export default function AdvancedSearchBar() {
         {/* Botón de búsqueda */}
         <button
           type="submit"
-          className="bg-blue-600 dark:bg-blue-500 text-white px-8 py-3 rounded-lg hover:bg-blue-700 dark:hover:bg-blue-600 transition-colors font-semibold whitespace-nowrap"
+          className="bg-green-600 dark:bg-green-500 text-white px-8 py-3 rounded-lg hover:bg-green-700 dark:hover:bg-green-600 transition-colors font-semibold whitespace-nowrap"
         >
           Buscar
         </button>

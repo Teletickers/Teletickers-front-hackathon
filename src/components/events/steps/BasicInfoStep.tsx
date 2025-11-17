@@ -89,7 +89,7 @@ export default function BasicInfoStep({ data, updateData, onNext }: Props) {
             </button>
           </div>
         ) : (
-          <div className="border-2 border-dashed border-gray-300 rounded-lg p-8 text-center hover:border-blue-500 transition-colors">
+          <div className="border-2 border-dashed border-gray-300 rounded-lg p-8 text-center hover:border-green-500 transition-colors">
             <input
               type="file"
               accept="image/*"
@@ -218,7 +218,7 @@ export default function BasicInfoStep({ data, updateData, onNext }: Props) {
 
       <button
         type="submit"
-        className="w-full bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700"
+        className="w-full bg-green-600 text-white py-3 rounded-lg hover:bg-green-700"
       >
         Continuar
       </button>

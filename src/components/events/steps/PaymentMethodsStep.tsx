@@ -82,7 +82,7 @@ export default function PaymentMethodsStep({ data, updateData, onNext, onBack }:
         <button
           type="submit"
           disabled={!data.metodos_pago || data.metodos_pago.length === 0}
-          className="flex-1 bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 disabled:bg-gray-400"
+          className="flex-1 bg-green-600 text-white py-3 rounded-lg hover:bg-green-700 disabled:bg-gray-400"
         >
           Continuar
         </button>

@@ -88,22 +88,22 @@ export default function ProfilePage() {
   return (
     <div className="container mx-auto px-4 py-8">
       {/* Header con info del usuario */}
-      <div className="bg-gradient-to-r from-blue-500 to-purple-600 rounded-2xl p-8 mb-8 text-white">
+      <div className="bg-gradient-to-r from-green-500 to-green-700 rounded-2xl p-8 mb-8 text-white">
         <div className="flex items-center gap-6">
-          <div className="w-24 h-24 bg-white rounded-full flex items-center justify-center text-blue-600 text-4xl font-bold">
+          <div className="w-24 h-24 bg-white rounded-full flex items-center justify-center text-green-600 text-4xl font-bold">
             {user.nombre.charAt(0).toUpperCase()}
           </div>
           <div>
             <h1 className="text-3xl font-bold mb-2">{user.nombre}</h1>
-            <p className="text-blue-100 mb-1">{user.email}</p>
-            <p className="text-blue-100">DNI: {user.dni}</p>
+            <p className="text-green-100 mb-1">{user.email}</p>
+            <p className="text-green-100">DNI: {user.dni}</p>
           </div>
         </div>
       </div>
 
       {/* Stats Cards */}
       <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
-        <div className="bg-white rounded-lg shadow-md p-6">
+        <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6">
           <div className="flex items-center justify-between mb-4">
             <div className="bg-blue-100 p-3 rounded-lg">
               <svg className="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -111,11 +111,11 @@ export default function ProfilePage() {
               </svg>
             </div>
           </div>
-          <p className="text-gray-600 text-sm mb-1">Total Eventos</p>
-          <p className="text-3xl font-bold">{data?.dashboardMetrics.totalEventos || 0}</p>
+          <p className="text-gray-600 dark:text-gray-400 text-sm mb-1">Total Eventos</p>
+          <p className="text-3xl font-bold dark:text-white">{data?.dashboardMetrics.totalEventos || 0}</p>
         </div>
 
-        <div className="bg-white rounded-lg shadow-md p-6">
+        <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6">
           <div className="flex items-center justify-between mb-4">
             <div className="bg-green-100 p-3 rounded-lg">
               <svg className="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -123,11 +123,11 @@ export default function ProfilePage() {
               </svg>
             </div>
           </div>
-          <p className="text-gray-600 text-sm mb-1">Total Ventas</p>
-          <p className="text-3xl font-bold">{data?.dashboardMetrics.totalVentas || 0}</p>
+          <p className="text-gray-600 dark:text-gray-400 text-sm mb-1">Total Ventas</p>
+          <p className="text-3xl font-bold dark:text-white">{data?.dashboardMetrics.totalVentas || 0}</p>
         </div>
 
-        <div className="bg-white rounded-lg shadow-md p-6">
+        <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6">
           <div className="flex items-center justify-between mb-4">
             <div className="bg-yellow-100 p-3 rounded-lg">
               <svg className="w-6 h-6 text-yellow-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -135,11 +135,11 @@ export default function ProfilePage() {
               </svg>
             </div>
           </div>
-          <p className="text-gray-600 text-sm mb-1">Ingresos Totales</p>
-          <p className="text-3xl font-bold">S/ {data?.dashboardMetrics.ingresosTotales || 0}</p>
+          <p className="text-gray-600 dark:text-gray-400 text-sm mb-1">Ingresos Totales</p>
+          <p className="text-3xl font-bold dark:text-white">S/ {data?.dashboardMetrics.ingresosTotales || 0}</p>
         </div>
 
-        <div className="bg-white rounded-lg shadow-md p-6">
+        <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6">
           <div className="flex items-center justify-between mb-4">
             <div className="bg-purple-100 p-3 rounded-lg">
               <svg className="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -147,16 +147,16 @@ export default function ProfilePage() {
               </svg>
             </div>
           </div>
-          <p className="text-gray-600 text-sm mb-1">Eventos Activos</p>
-          <p className="text-3xl font-bold">{data?.dashboardMetrics.eventosActivos || 0}</p>
+          <p className="text-gray-600 dark:text-gray-400 text-sm mb-1">Eventos Activos</p>
+          <p className="text-3xl font-bold dark:text-white">{data?.dashboardMetrics.eventosActivos || 0}</p>
         </div>
       </div>
 
       {/* Gráficas */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
         {/* Ventas Mensuales */}
-        <div className="bg-white rounded-lg shadow-md p-6">
-          <h2 className="text-xl font-bold mb-4">Balance Mensual</h2>
+        <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6">
+          <h2 className="text-xl font-bold mb-4 dark:text-white">Balance Mensual</h2>
           <ResponsiveContainer width="100%" height={300}>
             <LineChart data={ventasMensuales}>
               <CartesianGrid strokeDasharray="3 3" />
@@ -170,8 +170,8 @@ export default function ProfilePage() {
         </div>
 
         {/* Ganancias Mensuales */}
-        <div className="bg-white rounded-lg shadow-md p-6">
-          <h2 className="text-xl font-bold mb-4">Ganancia Mensual</h2>
+        <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6">
+          <h2 className="text-xl font-bold mb-4 dark:text-white">Ganancia Mensual</h2>
           <ResponsiveContainer width="100%" height={300}>
             <LineChart data={ventasMensuales}>
               <CartesianGrid strokeDasharray="3 3" />
@@ -188,8 +188,8 @@ export default function ProfilePage() {
       {/* Ventas por Categoría y Eventos Populares */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
         {/* Ventas por Categoría */}
-        <div className="bg-white rounded-lg shadow-md p-6">
-          <h2 className="text-xl font-bold mb-4">Ventas por Categoría</h2>
+        <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6">
+          <h2 className="text-xl font-bold mb-4 dark:text-white">Ventas por Categoría</h2>
           <ResponsiveContainer width="100%" height={300}>
             <PieChart>
               <Pie
@@ -212,18 +212,18 @@ export default function ProfilePage() {
         </div>
 
         {/* Eventos Populares */}
-        <div className="bg-white rounded-lg shadow-md p-6">
-          <h2 className="text-xl font-bold mb-4">Eventos Populares</h2>
+        <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6">
+          <h2 className="text-xl font-bold mb-4 dark:text-white">Eventos Populares</h2>
           <div className="space-y-4">
             {eventosPopulares.map((evento, index) => (
-              <div key={index} className="flex items-center justify-between p-4 bg-gray-50 rounded-lg">
+              <div key={index} className="flex items-center justify-between p-4 bg-gray-50 dark:bg-gray-700 rounded-lg">
                 <div className="flex items-center gap-4">
-                  <div className="bg-blue-500 text-white w-8 h-8 rounded-full flex items-center justify-center font-bold">
+                  <div className="bg-green-500 text-white w-8 h-8 rounded-full flex items-center justify-center font-bold">
                     {index + 1}
                   </div>
                   <div>
-                    <p className="font-semibold">{evento.nombre}</p>
-                    <p className="text-sm text-gray-600">{evento.ventas} tickets vendidos</p>
+                    <p className="font-semibold dark:text-white">{evento.nombre}</p>
+                    <p className="text-sm text-gray-600 dark:text-gray-300">{evento.ventas} tickets vendidos</p>
                   </div>
                 </div>
                 <div className="text-right">

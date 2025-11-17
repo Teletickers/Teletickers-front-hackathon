@@ -47,7 +47,7 @@ export default function MyEvents() {
   if (loading) {
     return (
       <div className="text-center py-12">
-        <div className="inline-block h-12 w-12 animate-spin rounded-full border-4 border-solid border-blue-600 border-r-transparent"></div>
+        <div className="inline-block h-12 w-12 animate-spin rounded-full border-4 border-solid border-green-600 border-r-transparent"></div>
         <p className="mt-4 text-gray-600">Cargando tus eventos...</p>
       </div>
     );
@@ -73,13 +73,13 @@ export default function MyEvents() {
       {/* Header */}
       <div className="flex justify-between items-center mb-8">
         <div>
-          <h1 className="text-4xl font-bold mb-2">Mis Eventos</h1>
-          <p className="text-gray-600">Gestiona todos tus eventos creados</p>
+          <h1 className="text-4xl font-bold mb-2 dark:text-white">Mis Eventos</h1>
+          <p className="text-gray-500">Gestiona todos tus eventos creados</p>
         </div>
 
         <a
           href="/crear-evento"
-          className="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors font-semibold flex items-center gap-2"
+          className="bg-green-600 text-white px-6 py-3 rounded-lg hover:bg-green-700 transition-colors font-semibold flex items-center gap-2"
         >
           <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
@@ -90,21 +90,21 @@ export default function MyEvents() {
 
       {/* Stats */}
       <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
-        <div className="bg-blue-50 rounded-lg p-6 text-center">
-          <h2 className="text-2xl font-bold text-blue-700">{eventosPublicados.length}</h2>
-          <p className="text-gray-600">Publicados</p>
+        <div className="bg-green-50 dark:bg-green-800 rounded-lg p-6 text-center">
+          <h2 className="text-2xl font-bold text-green-700 dark:text-green-400">{eventosPublicados.length}</h2>
+          <p className="text-gray-600 dark:text-gray-400" >Publicados</p>
         </div>
-        <div className="bg-yellow-50 rounded-lg p-6 text-center">
-          <h2 className="text-2xl font-bold text-yellow-700">{eventosBorrador.length}</h2>
-          <p className="text-gray-600">Borradores</p>
+        <div className="bg-yellow-50 dark:bg-yellow-800 rounded-lg p-6 text-center">
+          <h2 className="text-2xl font-bold text-yellow-700 dark:text-yellow-400">{eventosBorrador.length}</h2>
+          <p className="text-gray-600 dark:text-gray-400">Borradores</p>
         </div>
-        <div className="bg-red-50 rounded-lg p-6 text-center">
-          <h2 className="text-2xl font-bold text-red-700">{eventosCancelados.length}</h2>
-          <p className="text-gray-600">Cancelados</p>
+        <div className="bg-red-50 dark:bg-red-800 rounded-lg p-6 text-center">
+          <h2 className="text-2xl font-bold text-red-700 dark:text-red-400">{eventosCancelados.length}</h2>
+          <p className="text-gray-600 dark:text-gray-400">Cancelados</p>
         </div>
-        <div className="bg-green-50 rounded-lg p-6 text-center">
-          <h2 className="text-2xl font-bold text-green-700">{eventosFinalizados.length}</h2>
-          <p className="text-gray-600">Finalizados</p>
+        <div className="bg-blue-50 dark:bg-blue-800 rounded-lg p-6 text-center">
+          <h2 className="text-2xl font-bold text-blue-700 dark:text-blue-400">{eventosFinalizados.length}</h2>
+          <p className="text-gray-600 dark:text-gray-400">Finalizados</p>
         </div>
       </div>
 

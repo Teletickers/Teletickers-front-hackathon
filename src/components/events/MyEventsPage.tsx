@@ -8,7 +8,7 @@ export default function MyEventsPage() {
   return (
     <>
       <Sidebar />
-      <div className="ml-12">
+      <div className="min-h-screen bg-white dark:bg-gray-900 transition-colors duration-300">
         <Header />
         <ApolloWrapper>
           <MyEvents />

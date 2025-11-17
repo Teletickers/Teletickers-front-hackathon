@@ -30,7 +30,7 @@ export default function Favorites() {
     return (
       <div className="container mx-auto px-4 py-8">
         <div className="text-center py-12">
-          <div className="inline-block h-12 w-12 animate-spin rounded-full border-4 border-solid border-blue-600 dark:border-blue-400 border-r-transparent"></div>
+          <div className="inline-block h-12 w-12 animate-spin rounded-full border-4 border-solid border-green-600 dark:border-green-400 border-r-transparent"></div>
           <p className="mt-4 text-gray-700 dark:text-gray-300">Cargando tus favoritos...</p>
         </div>
       </div>
@@ -94,13 +94,13 @@ export default function Favorites() {
         <div className="bg-gradient-to-br from-blue-500 to-indigo-500 rounded-xl p-6 text-white">
           <div className="flex items-center justify-between">
             <div>
-              <p className="text-blue-100 text-sm font-medium">Categorías</p>
+              <p className="text-green-100 text-sm font-medium">Categorías</p>
               <p className="text-3xl font-bold mt-1">
                 {new Set(favoritos.map(e => e.categoria)).size}
               </p>
             </div>
             <svg
-              className="w-12 h-12 text-blue-200"
+              className="w-12 h-12 text-green-200"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -164,7 +164,7 @@ export default function Favorites() {
           </p>
           <a
             href="/"
-            className="inline-flex items-center gap-2 bg-blue-600 dark:bg-blue-500 text-white px-6 py-3 rounded-lg hover:bg-blue-700 dark:hover:bg-blue-600 transition-colors font-semibold"
+            className="inline-flex items-center gap-2 bg-green-600 dark:bg-green-500 text-white px-6 py-3 rounded-lg hover:bg-green-700 dark:hover:bg-green-600 transition-colors font-semibold"
           >
             <svg
               className="w-5 h-5"

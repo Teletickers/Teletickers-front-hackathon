@@ -148,7 +148,7 @@ export default function TicketsStep({ data, updateData, onNext, onBack }: Props)
             {tickets.map((ticket: any, index: number) => (
               <div
                 key={index}
-                className="flex justify-between items-center bg-blue-50 p-4 rounded-lg"
+                className="flex justify-between items-center bg-green-50 p-4 rounded-lg"
               >
                 <div>
                   <p className="font-semibold">{ticket.nombre}</p>
@@ -181,7 +181,7 @@ export default function TicketsStep({ data, updateData, onNext, onBack }: Props)
         <button
           type="submit"
           disabled={tickets.length === 0}
-          className="flex-1 bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 disabled:bg-gray-400"
+          className="flex-1 bg-green-600 text-white py-3 rounded-lg hover:bg-green-700 disabled:bg-gray-400"
         >
           Continuar
         </button>

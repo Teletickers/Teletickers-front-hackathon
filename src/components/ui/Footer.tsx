@@ -1,10 +1,12 @@
+import TickyLogo from '../../assets/logos/TickyLogo.png?url';
+
 export default function Footer() {
   return (
     <footer className="bg-gray-900 text-gray-300 mt-16">
       <div className="container mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div>
-            <h3 className="text-white text-2xl font-bold mb-4">Ticky</h3>
+            <h3 className="text-white text-2xl font-bold mb-4"> <img src={typeof TickyLogo === 'string' ? TickyLogo : (TickyLogo as any).src} alt="TickyLogo" className="h-8" /></h3>
             <p className="text-sm text-gray-400">
               La plataforma líder en venta de entradas para eventos en Perú.
               Descubre y compra tus entradas de forma segura.

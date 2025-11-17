@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-
+import TickyLogo from '../../assets/logos/TickyLogo.png?url';
 export default function Header() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [userName, setUserName] = useState('');
@@ -25,14 +25,14 @@ export default function Header() {
     <header className="bg-white dark:bg-gray-800 shadow-sm border-b border-gray-200 dark:border-gray-700 sticky top-0 z-40 transition-colors duration-300">
       <div className="container mx-auto px-4 py-4 flex justify-between items-center">
         <div className="flex items-center gap-8">
-          <a href="/" className="text-2xl font-bold text-blue-600 dark:text-blue-400">
-            Ticky
+          <a href="/" className="text-2xl font-bold text-green-600">
+            <img src={typeof TickyLogo === 'string' ? TickyLogo : (TickyLogo as any).src} alt="TickyLogo" className="h-8" />
           </a>
           <nav className="hidden md:flex gap-6">
-            <a href="/" className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+            <a href="/" className="text-gray-600 dark:text-gray-300 hover:text-green-600 dark:hover:text-green-400 transition-colors">
               Explorar
             </a>
-            <a href="/categorias" className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+            <a href="/categorias" className="text-gray-600 dark:text-gray-300 hover:text-green-600 dark:hover:text-green-400 transition-colors">
               Categorías
             </a>
           </nav>
@@ -43,7 +43,7 @@ export default function Header() {
             <>
             <a
                 href="/crear-evento"
-                className="hidden md:flex items-center gap-2 bg-blue-600 dark:bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-700 dark:hover:bg-blue-600 transition-colors"
+                className="hidden md:flex items-center gap-2 bg-green-600 dark:bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-700 dark:hover:bg-green-600 transition-colors"
               >
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
@@ -53,7 +53,7 @@ export default function Header() {
               
               <div className="relative group">
                 <button className="flex items-center gap-2 px-4 py-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
-                  <div className="w-8 h-8 bg-blue-600 dark:bg-blue-500 rounded-full flex items-center justify-center text-white font-semibold">
+                  <div className="w-8 h-8 bg-green-600 dark:bg-green-500 rounded-full flex items-center justify-center text-white font-semibold">
                     {userName.charAt(0).toUpperCase()}
                   </div>
                   <span className="hidden md:block text-gray-700 dark:text-gray-200 font-medium">{userName}</span>
@@ -85,7 +85,7 @@ export default function Header() {
             <>
               <a
                 href="/crear-evento"
-                className="hidden md:flex items-center gap-2 text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+                className="hidden md:flex items-center gap-2 text-gray-600 dark:text-gray-300 hover:text-green-600 dark:hover:text-green-400 transition-colors"
               >
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
@@ -95,14 +95,14 @@ export default function Header() {
               
               <a
                 href="/login"
-                className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors font-medium"
+                className="text-gray-600 dark:text-gray-300 hover:text-green-600 dark:hover:text-green-400 transition-colors font-medium"
               >
                 Iniciar Sesión
               </a>
               
               <a
                 href="/register"
-                className="bg-blue-600 dark:bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-700 dark:hover:bg-blue-600 transition-colors font-medium"
+                className="bg-green-600 dark:bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-700 dark:hover:bg-green-600 transition-colors font-medium"
               >
                 Registrarse
               </a>

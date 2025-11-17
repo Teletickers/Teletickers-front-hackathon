@@ -109,14 +109,14 @@ export default function CreateEventFlow() {
             <div key={num} className="flex items-center">
               <div
                 className={`w-10 h-10 rounded-full flex items-center justify-center ${
-                  step >= num ? 'bg-blue-600 text-white' : 'bg-gray-200 text-gray-600'
+                  step >= num ? 'bg-green-600 text-white' : 'bg-gray-200 text-gray-600'
                 }`}
               >
                 {num}
               </div>
               {num < 5 && (
                 <div
-                  className={`w-20 h-1 ${step > num ? 'bg-blue-600' : 'bg-gray-200'}`}
+                  className={`w-20 h-1 ${step > num ? 'bg-green-600' : 'bg-gray-200'}`}
                 />
               )}
             </div>

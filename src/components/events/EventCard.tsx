@@ -12,7 +12,7 @@ export default function EventCard({ evento }: Props) {
     >
       {evento.miniatura && (
         <img
-          src={evento.miniatura}
+          src={evento.miniatura || "/placeholder.svg"}
           alt={evento.titulo}
           className="w-full h-48 object-cover"
         />
@@ -28,7 +28,7 @@ export default function EventCard({ evento }: Props) {
           📍 {evento.distrito}, {evento.provincia}
         </div>
         <div className="mt-3 flex justify-between items-center">
-          <span className="px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded-full text-xs font-medium">
+          <span className="px-3 py-1 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 rounded-full text-xs font-medium">
             {evento.categoria}
           </span>
           <span className="text-sm text-gray-600 dark:text-gray-400">Aforo: {evento.aforo}</span>

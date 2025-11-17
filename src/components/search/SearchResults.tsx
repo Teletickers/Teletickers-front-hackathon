@@ -37,7 +37,7 @@ export default function SearchResults() {
   if (loading) {
     return (
       <div className="text-center py-12">
-        <div className="inline-block h-12 w-12 animate-spin rounded-full border-4 border-solid border-blue-600 border-r-transparent"></div>
+        <div className="inline-block h-12 w-12 animate-spin rounded-full border-4 border-solid border-green-600 border-r-transparent"></div>
         <p className="mt-4 text-gray-600">Buscando eventos...</p>
       </div>
     );

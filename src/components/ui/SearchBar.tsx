@@ -18,11 +18,11 @@ export default function SearchBar() {
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}
           placeholder="Buscar eventos por nombre, categoría o ubicación..."
-          className="w-full px-6 py-4 pr-12 rounded-full border-2 border-gray-200 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-400 focus:outline-none text-lg shadow-sm bg-white dark:bg-gray-800 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 transition-colors"
+          className="w-full px-6 py-4 pr-12 rounded-full border-2 border-gray-200 dark:border-gray-600 focus:border-green-500 dark:focus:border-green-400 focus:outline-none text-lg shadow-sm bg-white dark:bg-gray-800 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 transition-colors"
         />
         <button
           type="submit"
-          className="absolute right-2 top-1/2 -translate-y-1/2 bg-blue-600 dark:bg-blue-500 text-white p-3 rounded-full hover:bg-blue-700 dark:hover:bg-blue-600 transition-colors"
+          className="absolute right-2 top-1/2 -translate-y-1/2 bg-green-600 dark:bg-green-500 text-white p-3 rounded-full hover:bg-green-700 dark:hover:bg-green-600 transition-colors"
         >
           <svg
             className="w-5 h-5"
