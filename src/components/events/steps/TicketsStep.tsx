@@ -1,4 +1,3 @@
-// src/components/events/steps/TicketsStep.tsx
 import { useState } from 'react';
 
 interface Props {

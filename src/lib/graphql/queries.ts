@@ -14,6 +14,7 @@ export const GET_EVENTOS_PUBLICADOS = gql`
       categoria
       aforo
       estado
+      miniatura
     }
   }
 `;
@@ -32,6 +33,7 @@ export const GET_EVENTO = gql`
       categoria
       aforo
       estado
+      miniatura
     }
   }
 `;
@@ -50,6 +52,7 @@ export const SEARCH_EVENTOS = gql`
       categoria
       aforo
       estado
+      miniatura
     }
   }
 `;
@@ -68,6 +71,7 @@ export const GET_MIS_EVENTOS = gql`
       categoria
       aforo
       estado
+      miniatura
     }
   }
 `;
@@ -109,6 +113,7 @@ export const GET_MIS_FAVORITOS = gql`
       categoria
       aforo
       estado
+      miniatura
     }
   }
 `;

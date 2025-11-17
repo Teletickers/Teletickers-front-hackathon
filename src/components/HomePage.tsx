@@ -14,8 +14,6 @@ export default function HomePage() {
         <Header />
         <ApolloWrapper>
           <div className="container mx-auto px-4 py-8">
-            <header className="mb-8">
-            </header>
             <BannerCarousel />
             <AdvancedSearchBar />
             <EventListWithSections />

@@ -1,8 +1,19 @@
-// src/components/categories/CategoriesPage.tsx
+import { gql } from '@apollo/client';
+import { useQuery } from '@apollo/client/react';
+
 import ApolloWrapper from '../providers/ApolloWrapper';
 import Sidebar from '../ui/Sidebar';
 import Header from '../ui/Header';
 import Footer from '../ui/Footer';
+
+const GET_EVENTOS_PUBLICADOS = gql`
+  query EventosPublicados {
+    eventosPublicados {
+      id
+      categoria
+    }
+  }
+`;
 
 const CATEGORIES = [
   {
@@ -55,7 +66,22 @@ const CATEGORIES = [
   },
 ];
 
-export default function CategoriesPage() {
+interface EventosData {
+  eventosPublicados: {
+    id: string;
+    categoria: string;
+  }[];
+}
+
+function CategoriesContent() {
+  const { data, loading } = useQuery<EventosData>(GET_EVENTOS_PUBLICADOS);
+  const getEventCountByCategory = (slug: string): number => {
+    if (!data?.eventosPublicados) return 0;
+    return data.eventosPublicados.filter(
+      (evento: any) => evento.categoria.toLowerCase() === slug.toLowerCase()
+    ).length;
+  };
+
   const handleCategoryClick = (slug: string) => {
     window.location.href = `/buscar?categoria=${slug}`;
   };
@@ -66,7 +92,6 @@ export default function CategoriesPage() {
       <div className="min-h-screen bg-white dark:bg-gray-900 transition-colors duration-300">
         <Header />
         <div className="container mx-auto px-4 py-8">
-          {/* Header */}
           <div className="text-center mb-12">
             <h1 className="text-5xl font-bold mb-4 text-gray-900 dark:text-white">
               Explora por Categorías
@@ -76,44 +101,46 @@ export default function CategoriesPage() {
             </p>
           </div>
 
-          {/* Categorías Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-            {CATEGORIES.map((category) => (
-              <button
-                key={category.slug}
-                onClick={() => handleCategoryClick(category.slug)}
-                className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl dark:shadow-gray-800 dark:hover:shadow-gray-700 transition-all duration-300 transform hover:-translate-y-2"
-              >
-                {/* Imagen de fondo */}
-                <div className="relative h-64 overflow-hidden">
-                  <img
-                    src={category.image}
-                    alt={category.name}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                  />
-                  
-                  {/* Overlay degradado */}
-                  <div
-                    className={`absolute inset-0 bg-gradient-to-t ${category.color} opacity-60 group-hover:opacity-70 transition-opacity`}
-                  ></div>
+            {CATEGORIES.map((category) => {
+              const eventCount = getEventCountByCategory(category.slug);
+              
+              return (
+                <button
+                  key={category.slug}
+                  onClick={() => handleCategoryClick(category.slug)}
+                  className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl dark:shadow-gray-800 dark:hover:shadow-gray-700 transition-all duration-300 transform hover:-translate-y-2"
+                >
+                  <div className="relative h-64 overflow-hidden">
+                    <img
+                      src={category.image}
+                      alt={category.name}
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                    />
+                    
+                    <div
+                      className={`absolute inset-0 bg-gradient-to-t ${category.color} opacity-60 group-hover:opacity-70 transition-opacity`}
+                    ></div>
 
-                  {/* Contenido */}
-                  <div className="absolute inset-0 flex flex-col justify-end p-6 text-white">
-                    <div className="text-5xl mb-3">{category.icon}</div>
-                    <h3 className="text-2xl font-bold mb-2">{category.name}</h3>
-                    <p className="text-sm opacity-90">{category.description}</p>
-                  </div>
+                    <div className="absolute inset-0 flex flex-col justify-end p-6 text-white">
+                      <div className="text-5xl mb-3">{category.icon}</div>
+                      <h3 className="text-2xl font-bold mb-2">{category.name}</h3>
+                      <p className="text-sm opacity-90">{category.description}</p>
+                    </div>
 
-                  {/* Badge de contador */}
-                  <div className="absolute top-4 right-4 bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm text-gray-800 dark:text-gray-100 px-3 py-1 rounded-full text-sm font-semibold">
-                    {Math.floor(Math.random() * 50) + 10}+ eventos
+                    <div className="absolute top-4 right-4 bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm text-gray-800 dark:text-gray-100 px-3 py-1 rounded-full text-sm font-semibold">
+                      {loading ? (
+                        <span className="inline-block w-8 h-4 bg-gray-300 dark:bg-gray-600 animate-pulse rounded"></span>
+                      ) : (
+                        `${eventCount} evento${eventCount !== 1 ? 's' : ''}`
+                      )}
+                    </div>
                   </div>
-                </div>
-              </button>
-            ))}
+                </button>
+              );
+            })}
           </div>
 
-          {/* Sección adicional */}
           <div className="bg-gradient-to-r from-green-50 to-purple-50 dark:from-green-900/20 dark:to-purple-900/20 rounded-2xl p-12 text-center transition-colors duration-300">
             <h2 className="text-3xl font-bold mb-4 text-gray-900 dark:text-white">
               ¿No encuentras lo que buscas?
@@ -133,5 +160,13 @@ export default function CategoriesPage() {
         <Footer />
       </div>
     </>
+  );
+}
+
+export default function CategoriesPage() {
+  return (
+    <ApolloWrapper>
+      <CategoriesContent />
+    </ApolloWrapper>
   );
 }
