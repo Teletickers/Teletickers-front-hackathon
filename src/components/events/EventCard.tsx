@@ -1,4 +1,3 @@
-// src/components/events/EventCard.tsx
 import type { Evento } from '../../types';
 
 interface Props {
@@ -9,7 +8,7 @@ export default function EventCard({ evento }: Props) {
   return (
     <a
       href={`/eventos/${evento.id}`}
-      className="block bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow"
+      className="block bg-white dark:bg-gray-800 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden border border-transparent dark:border-gray-700"
     >
       {evento.miniatura && (
         <img
@@ -19,20 +18,20 @@ export default function EventCard({ evento }: Props) {
         />
       )}
       <div className="p-4">
-        <h3 className="font-bold text-xl mb-2">{evento.titulo}</h3>
-        <p className="text-gray-600 text-sm mb-2 line-clamp-2">{evento.descripcion}</p>
-        <div className="flex items-center gap-2 text-sm text-gray-500">
+        <h3 className="font-bold text-xl mb-2 text-gray-900 dark:text-white">{evento.titulo}</h3>
+        <p className="text-gray-600 dark:text-gray-300 text-sm mb-2 line-clamp-2">{evento.descripcion}</p>
+        <div className="flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400">
           <span>📅 {new Date(evento.fecha).toLocaleDateString()}</span>
           <span>🕐 {evento.hora}</span>
         </div>
-        <div className="mt-2 text-sm text-gray-500">
+        <div className="mt-2 text-sm text-gray-500 dark:text-gray-400">
           📍 {evento.distrito}, {evento.provincia}
         </div>
         <div className="mt-3 flex justify-between items-center">
-          <span className="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-xs">
+          <span className="px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded-full text-xs font-medium">
             {evento.categoria}
           </span>
-          <span className="text-sm text-gray-600">Aforo: {evento.aforo}</span>
+          <span className="text-sm text-gray-600 dark:text-gray-400">Aforo: {evento.aforo}</span>
         </div>
       </div>
     </a>

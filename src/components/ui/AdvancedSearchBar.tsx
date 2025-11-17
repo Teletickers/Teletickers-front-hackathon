@@ -86,12 +86,12 @@ export default function AdvancedSearchBar() {
 
   return (
     <form onSubmit={handleSearch} className="w-full max-w-6xl mx-auto mb-12">
-      <div className="bg-white rounded-2xl shadow-lg p-4 flex flex-wrap gap-4 items-center">
+      <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-lg dark:shadow-gray-900/50 p-4 flex flex-wrap gap-4 items-center transition-colors duration-300">
         {/* Búsqueda de texto con sugerencias */}
         <div className="flex-1 min-w-[250px] relative" ref={searchRef}>
           <div className="relative">
             <svg
-              className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400"
+              className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400 dark:text-gray-500"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -112,13 +112,13 @@ export default function AdvancedSearchBar() {
               }}
               onFocus={() => setShowSuggestions(true)}
               placeholder="Buscar eventos..."
-              className="w-full pl-12 pr-4 py-3 border-2 border-gray-200 rounded-lg focus:border-blue-500 focus:outline-none"
+              className="w-full pl-12 pr-4 py-3 border-2 border-gray-200 dark:border-gray-600 rounded-lg focus:border-blue-500 dark:focus:border-blue-400 focus:outline-none bg-white dark:bg-gray-700 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 transition-colors"
             />
           </div>
 
           {/* Sugerencias */}
           {showSuggestions && suggestions.length > 0 && (
-            <div className="absolute z-10 w-full mt-2 bg-white rounded-lg shadow-xl border border-gray-200">
+            <div className="absolute z-10 w-full mt-2 bg-white dark:bg-gray-800 rounded-lg shadow-xl dark:shadow-gray-900/50 border border-gray-200 dark:border-gray-700">
               {suggestions.map((suggestion, index) => (
                 <button
                   key={index}
@@ -127,7 +127,7 @@ export default function AdvancedSearchBar() {
                     setSearchText(suggestion);
                     setShowSuggestions(false);
                   }}
-                  className="w-full px-4 py-3 text-left hover:bg-gray-50 first:rounded-t-lg last:rounded-b-lg transition-colors"
+                  className="w-full px-4 py-3 text-left hover:bg-gray-50 dark:hover:bg-gray-700 first:rounded-t-lg last:rounded-b-lg transition-colors text-gray-900 dark:text-white"
                 >
                   {suggestion}
                 </button>
@@ -141,7 +141,7 @@ export default function AdvancedSearchBar() {
           <select
             value={ciudad}
             onChange={(e) => setCiudad(e.target.value)}
-            className="appearance-none pl-4 pr-10 py-3 border-2 border-gray-200 rounded-lg focus:border-blue-500 focus:outline-none cursor-pointer bg-white min-w-[150px]"
+            className="appearance-none pl-4 pr-10 py-3 border-2 border-gray-200 dark:border-gray-600 rounded-lg focus:border-blue-500 dark:focus:border-blue-400 focus:outline-none cursor-pointer bg-white dark:bg-gray-700 text-gray-900 dark:text-white min-w-[150px] transition-colors"
           >
             {CIUDADES.map((c) => (
               <option key={c} value={c}>
@@ -150,7 +150,7 @@ export default function AdvancedSearchBar() {
             ))}
           </select>
           <svg
-            className="absolute right-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400 pointer-events-none"
+            className="absolute right-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400 dark:text-gray-500 pointer-events-none"
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"
@@ -164,7 +164,7 @@ export default function AdvancedSearchBar() {
           <select
             value={precio}
             onChange={(e) => setPrecio(e.target.value)}
-            className="appearance-none pl-4 pr-10 py-3 border-2 border-gray-200 rounded-lg focus:border-blue-500 focus:outline-none cursor-pointer bg-white min-w-[150px]"
+            className="appearance-none pl-4 pr-10 py-3 border-2 border-gray-200 dark:border-gray-600 rounded-lg focus:border-blue-500 dark:focus:border-blue-400 focus:outline-none cursor-pointer bg-white dark:bg-gray-700 text-gray-900 dark:text-white min-w-[150px] transition-colors"
           >
             {PRECIOS.map((p) => (
               <option key={p.value} value={p.value}>
@@ -173,7 +173,7 @@ export default function AdvancedSearchBar() {
             ))}
           </select>
           <svg
-            className="absolute right-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400 pointer-events-none"
+            className="absolute right-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400 dark:text-gray-500 pointer-events-none"
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"
@@ -187,7 +187,7 @@ export default function AdvancedSearchBar() {
           <select
             value={categoria}
             onChange={(e) => setCategoria(e.target.value)}
-            className="appearance-none pl-4 pr-10 py-3 border-2 border-gray-200 rounded-lg focus:border-blue-500 focus:outline-none cursor-pointer bg-white min-w-[150px]"
+            className="appearance-none pl-4 pr-10 py-3 border-2 border-gray-200 dark:border-gray-600 rounded-lg focus:border-blue-500 dark:focus:border-blue-400 focus:outline-none cursor-pointer bg-white dark:bg-gray-700 text-gray-900 dark:text-white min-w-[150px] transition-colors"
           >
             {CATEGORIAS.map((cat) => (
               <option key={cat} value={cat}>
@@ -196,7 +196,7 @@ export default function AdvancedSearchBar() {
             ))}
           </select>
           <svg
-            className="absolute right-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400 pointer-events-none"
+            className="absolute right-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400 dark:text-gray-500 pointer-events-none"
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"
@@ -208,7 +208,7 @@ export default function AdvancedSearchBar() {
         {/* Botón de búsqueda */}
         <button
           type="submit"
-          className="bg-blue-600 text-white px-8 py-3 rounded-lg hover:bg-blue-700 transition-colors font-semibold whitespace-nowrap"
+          className="bg-blue-600 dark:bg-blue-500 text-white px-8 py-3 rounded-lg hover:bg-blue-700 dark:hover:bg-blue-600 transition-colors font-semibold whitespace-nowrap"
         >
           Buscar
         </button>

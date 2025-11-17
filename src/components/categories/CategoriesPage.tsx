@@ -63,13 +63,15 @@ export default function CategoriesPage() {
   return (
     <>
       <Sidebar />
-      <div className="ml-12">
+      <div className="ml-12 min-h-screen bg-white dark:bg-gray-900 transition-colors duration-300">
         <Header />
         <div className="container mx-auto px-4 py-8">
           {/* Header */}
           <div className="text-center mb-12">
-            <h1 className="text-5xl font-bold mb-4">Explora por Categorías</h1>
-            <p className="text-gray-600 text-lg">
+            <h1 className="text-5xl font-bold mb-4 text-gray-900 dark:text-white">
+              Explora por Categorías
+            </h1>
+            <p className="text-gray-600 dark:text-gray-300 text-lg">
               Encuentra el evento perfecto para ti
             </p>
           </div>
@@ -80,7 +82,7 @@ export default function CategoriesPage() {
               <button
                 key={category.slug}
                 onClick={() => handleCategoryClick(category.slug)}
-                className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2"
+                className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl dark:shadow-gray-800 dark:hover:shadow-gray-700 transition-all duration-300 transform hover:-translate-y-2"
               >
                 {/* Imagen de fondo */}
                 <div className="relative h-64 overflow-hidden">
@@ -102,8 +104,8 @@ export default function CategoriesPage() {
                     <p className="text-sm opacity-90">{category.description}</p>
                   </div>
 
-                  {/* Badge de contador (opcional) */}
-                  <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm text-gray-800 px-3 py-1 rounded-full text-sm font-semibold">
+                  {/* Badge de contador */}
+                  <div className="absolute top-4 right-4 bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm text-gray-800 dark:text-gray-100 px-3 py-1 rounded-full text-sm font-semibold">
                     {Math.floor(Math.random() * 50) + 10}+ eventos
                   </div>
                 </div>
@@ -112,15 +114,17 @@ export default function CategoriesPage() {
           </div>
 
           {/* Sección adicional */}
-          <div className="bg-gradient-to-r from-blue-50 to-purple-50 rounded-2xl p-12 text-center">
-            <h2 className="text-3xl font-bold mb-4">¿No encuentras lo que buscas?</h2>
-            <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
+          <div className="bg-gradient-to-r from-blue-50 to-purple-50 dark:from-blue-900/20 dark:to-purple-900/20 rounded-2xl p-12 text-center transition-colors duration-300">
+            <h2 className="text-3xl font-bold mb-4 text-gray-900 dark:text-white">
+              ¿No encuentras lo que buscas?
+            </h2>
+            <p className="text-gray-600 dark:text-gray-300 mb-6 max-w-2xl mx-auto">
               Usa nuestra búsqueda avanzada para encontrar eventos específicos por ubicación,
               precio y más filtros personalizados
             </p>
             <button
               onClick={() => (window.location.href = '/')}
-              className="bg-blue-600 text-white px-8 py-3 rounded-lg hover:bg-blue-700 transition-colors font-semibold"
+              className="bg-blue-600 dark:bg-blue-500 text-white px-8 py-3 rounded-lg hover:bg-blue-700 dark:hover:bg-blue-600 transition-colors font-semibold"
             >
               Ir a búsqueda avanzada
             </button>

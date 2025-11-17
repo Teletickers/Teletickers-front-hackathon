@@ -10,7 +10,7 @@ export default function HomePage() {
   return (
     <>
       <Sidebar />
-      <div className="ml-12">
+      <div className="ml-12 min-h-screen bg-white dark:bg-gray-900 transition-colors duration-300">
         <Header />
         <ApolloWrapper>
           <div className="container mx-auto px-4 py-8">

@@ -94,3 +94,21 @@ export const GET_DASHBOARD_METRICS = gql`
     }
   }
 `;
+
+export const GET_MIS_FAVORITOS = gql`
+  query MisFavoritos {
+    misFavoritos {
+      id
+      titulo
+      descripcion
+      fecha
+      hora
+      region
+      provincia
+      distrito
+      categoria
+      aforo
+      estado
+    }
+  }
+`;

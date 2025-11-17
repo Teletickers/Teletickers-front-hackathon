@@ -1,18 +1,17 @@
-// src/components/search/SearchPage.tsx
 import ApolloWrapper from '../providers/ApolloWrapper';
-import SearchResults from './SearchResults';
+import Favorites from './Favorites';
 import Sidebar from '../ui/Sidebar';
 import Header from '../ui/Header';
 import Footer from '../ui/Footer';
 
-export default function SearchPage() {
+export default function FavoritesPage() {
   return (
     <>
       <Sidebar />
       <div className="ml-12 min-h-screen bg-white dark:bg-gray-900 transition-colors duration-300">
         <Header />
         <ApolloWrapper>
-          <SearchResults />
+          <Favorites />
         </ApolloWrapper>
         <Footer />
       </div>
