@@ -12,7 +12,6 @@ export default function BasicInfoStep({ data, updateData, onNext }: Props) {
   const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
     if (file) {
-      // Validar tamaño (máximo 5MB)
       if (file.size > 5 * 1024 * 1024) {
         alert('La imagen no debe superar los 5MB');
         return;
@@ -24,7 +23,6 @@ export default function BasicInfoStep({ data, updateData, onNext }: Props) {
         return;
       }
 
-      // Crear preview
       const reader = new FileReader();
       reader.onloadend = () => {
         const result = reader.result as string;
