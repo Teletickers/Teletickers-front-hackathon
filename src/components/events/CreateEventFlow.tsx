@@ -1,4 +1,3 @@
-// src/components/events/CreateEventFlow.tsx
 import { useState } from 'react';
 import { useMutation } from '@apollo/client/react';
 import { CREATE_EVENTO } from '../../lib/graphql/mutations';

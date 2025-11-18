@@ -1,4 +1,3 @@
-// src/components/auth/LoginForm.tsx
 import { useState } from 'react';
 import { useMutation } from '@apollo/client/react';
 import { LOGIN_MUTATION } from '../../lib/graphql/mutations';

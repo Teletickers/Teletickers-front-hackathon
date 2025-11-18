@@ -1,4 +1,3 @@
-// src/components/auth/RegisterPage.tsx
 import ApolloWrapper from '../providers/ApolloWrapper';
 import RegisterForm from './RegisterForm';
 

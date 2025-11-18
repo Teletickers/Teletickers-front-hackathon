@@ -1,4 +1,3 @@
-// src/components/events/EventListWithSections.tsx
 import { useQuery } from '@apollo/client/react';
 import { useState, useEffect, useRef } from 'react';
 import { GET_EVENTOS_PUBLICADOS } from '../../lib/graphql/queries';

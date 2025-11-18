@@ -1,4 +1,3 @@
-// src/components/events/CreateEventPage.tsx
 import ApolloWrapper from '../providers/ApolloWrapper';
 import CreateEventFlow from './CreateEventFlow';
 

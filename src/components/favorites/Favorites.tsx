@@ -1,4 +1,3 @@
-// src/components/favorites/Favorites.tsx
 import { useState, useEffect } from 'react';
 import { useQuery } from '@apollo/client/react';
 import { GET_EVENTOS_PUBLICADOS } from '../../lib/graphql/queries';
@@ -14,7 +13,6 @@ export default function Favorites() {
   const { data, loading, error } = useQuery<EventosData>(GET_EVENTOS_PUBLICADOS);
 
   useEffect(() => {
-    // Cargar favoritos desde localStorage
     const favorites = JSON.parse(localStorage.getItem('favorites') || '[]');
     setFavoriteIds(favorites);
   }, []);

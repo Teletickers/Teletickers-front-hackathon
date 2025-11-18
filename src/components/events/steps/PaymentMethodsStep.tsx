@@ -1,4 +1,3 @@
-// src/components/events/steps/PaymentMethodsStep.tsx
 interface Props {
   data: any;
   updateData: (data: any) => void;

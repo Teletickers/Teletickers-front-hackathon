@@ -1,4 +1,3 @@
-// src/components/help/Help.tsx
 import { useState } from 'react';
 
 const FAQ_CATEGORIES = [

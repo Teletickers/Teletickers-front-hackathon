@@ -1,4 +1,3 @@
-// src/components/auth/RegisterForm.tsx
 import { useState } from 'react';
 import { useMutation } from '@apollo/client/react';
 import { REGISTER_MUTATION } from '../../lib/graphql/mutations';
